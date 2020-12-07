@@ -1,0 +1,50 @@
+body
+{
+    background-color: white;
+    padding: 20px;
+}
+
+h1, h2, li, ul
+{
+    font-family: Helvetica, sans-serif;
+}
+
+h2
+{
+  font-size: 22pt;
+}
+
+ul.header
+{
+    background-color: black;
+    padding: 0px;
+}
+
+ul.header li
+{
+  display: inline;
+  list-style-type: none;
+  margin: 0;
+}
+
+ul.header li a
+{
+  color: white;
+  font-weight: 700;
+  text-decoration: none;
+  padding: 20px;
+  display: inline-block;
+}
+
+.all_link
+{
+  font-family: Helvetica, sans-serif;
+  font-size: 18px;
+  text-decoration: none;
+}
+
+a:hover
+{
+  background-color: red;
+  cursor: pointer;
+}
