@@ -11,12 +11,12 @@ class Main extends Component {
         return (
           <HashRouter>
               <div>
-                  <h1>ReactJSRouting</h1>
+                  <h1>ReactJavaScript</h1>
                   <ul className="header">
-                      <li><NavLink exact to="/">Главная</NavLink></li>
-                      <li><NavLink to="/Articles">Статьи</NavLink></li>
-                      <li><NavLink to="/Game">Игра</NavLink></li>
-                      <li><NavLink to="/Tests">Тесты</NavLink></li>
+                      <li2><NavLink exact to="/"><span>Главная</span></NavLink></li2>
+                      <li2><NavLink to="/Articles"><span>Статьи</span></NavLink></li2>
+                      <li2><NavLink to="/Game"><span>Игра</span></NavLink></li2>
+                      <li2><NavLink to="/Tests"><span>Тесты</span></NavLink></li2>
                   </ul>
                   <div className="content">
                       <Route exact path="/" component={Home} />

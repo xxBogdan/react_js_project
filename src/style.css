@@ -4,14 +4,52 @@ body
     padding: 20px;
 }
 
-h1, h2, li, ul
+.text
 {
-    font-family: Helvetica, sans-serif;
+  margin-left: 300px;
+  font-family: Helvetica, sans-serif;
+}
+
+.menu
+{
+  display: flex;
+  flex-direction: column;
+}
+
+.content2
+{
+  display: flex;
+  flex-direction: column;
+}
+
+h1
+{
+  color: red;
 }
 
 h2
 {
   font-size: 22pt;
+}
+
+h4
+{
+  font-size: 25pt;
+  text-align: center;
+}
+
+p
+{
+  text-align: center;
+  font-family: "Helvetica";
+  font-weight: normal;
+  font-size: 12pt;
+}
+
+h1, ul, h4, h2
+{
+
+    font-family: Helvetica, sans-serif;
 }
 
 ul.header
@@ -20,14 +58,19 @@ ul.header
     padding: 0px;
 }
 
-ul.header li
+ul.header li2
 {
   display: inline;
   list-style-type: none;
   margin: 0;
 }
 
-ul.header li a
+span.text1
+{
+  color: white;
+}
+
+ul.header li2 a
 {
   color: white;
   font-weight: 700;
@@ -43,8 +86,22 @@ ul.header li a
   text-decoration: none;
 }
 
-a:hover
+span:hover
 {
-  background-color: red;
   cursor: pointer;
+  color: red;
+}
+
+a
+{
+  text-decoration: none;
+  font-family: Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 20px;
+  color: black;
+}
+
+a:visited
+{
+ color: black;
 }
