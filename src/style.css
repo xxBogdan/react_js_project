@@ -7,19 +7,26 @@ body
 .text
 {
   margin-left: 300px;
-  font-family: Helvetica, sans-serif;
+  font-family: "Helvetica";
 }
 
 .menu
 {
   display: flex;
   flex-direction: column;
+  width: 150px;
 }
 
-.content2
+.all_link
 {
-  display: flex;
-  flex-direction: column;
+  font-family: "Helvetica";
+  font-size: 18px;
+  text-decoration: none;
+}
+
+h1, ul, h4, h2
+{
+  font-family: "Helvetica";
 }
 
 h1
@@ -27,15 +34,26 @@ h1
   color: red;
 }
 
-h2
-{
-  font-size: 22pt;
-}
-
 h4
 {
   font-size: 25pt;
   text-align: center;
+}
+
+h5
+{
+  font-family: "Helvetica";
+  margin-left: 790px;
+}
+
+h6
+{
+  margin-left: 790px;
+}
+
+h7
+{
+  margin-left: 790px;
 }
 
 p
@@ -46,10 +64,80 @@ p
   font-size: 12pt;
 }
 
-h1, ul, h4, h2
+.content_block
 {
+  display: flex;
+  display: inline-block;
+}
 
-    font-family: Helvetica, sans-serif;
+.h8
+{
+  color: black;
+  font-size: 20pt;
+}
+
+p2
+{
+  font-family: "Helvetica";
+  font-weight: bold;
+  font-size: 17pt;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin-top: 50px;
+}
+
+p3
+{
+  font-family: "Helvetica";
+  font-size: 12pt;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin-top: 10px;
+}
+
+p4
+{
+  font-family: "Helvetica";
+  font-weight: bold;
+  font-size: 17pt;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin-top: 50px;
+}
+
+p5
+{
+  font-family: "Helvetica";
+  font-size: 12pt;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin-top: 10px;
+}
+
+p6
+{
+  font-family: "Helvetica";
+  font-weight: bold;
+  font-size: 17pt;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin-top: 50px;
+}
+
+p7
+{
+  font-family: "Helvetica";
+  font-size: 12pt;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 30px;
 }
 
 ul.header
@@ -65,11 +153,6 @@ ul.header li2
   margin: 0;
 }
 
-span.text1
-{
-  color: white;
-}
-
 ul.header li2 a
 {
   color: white;
@@ -77,13 +160,6 @@ ul.header li2 a
   text-decoration: none;
   padding: 20px;
   display: inline-block;
-}
-
-.all_link
-{
-  font-family: Helvetica, sans-serif;
-  font-size: 18px;
-  text-decoration: none;
 }
 
 span:hover
@@ -95,9 +171,9 @@ span:hover
 a
 {
   text-decoration: none;
-  font-family: Helvetica, sans-serif;
+  font-family: "Helvetica";
   font-weight: bold;
-  font-size: 20px;
+  font-size: 18px;
   color: black;
 }
 
