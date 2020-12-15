@@ -8,7 +8,7 @@ export default function Fcomponent(props) {
         <div>
           <Link exact to="/Articles"><img src="https://raw.githubusercontent.com/orcuntuna/react-turkce-kaynak/master/images/giris.jpeg" height="40%" width="40%"/></Link>
         </div>
-        {props.name}
+          {props.name}
     </span>
   )
 }

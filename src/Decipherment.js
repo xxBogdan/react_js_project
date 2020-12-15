@@ -6,7 +6,7 @@ class Decipherment extends Component {
         return (
             <div>
               <h8>
-                VANGELIS
+                DECIPHERMENT
               </h8>
             </div>
         );

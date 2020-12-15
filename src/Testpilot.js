@@ -6,7 +6,7 @@ class Testpilot extends Component {
         return (
             <div>
               <h8>
-                VANGELIS
+                TESTPILOT
               </h8>
             </div>
         );
