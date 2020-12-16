@@ -4,6 +4,8 @@ import Testpilot from './Testpilot';
 import Vangelis from './Vangelis';
 import Decipherment from './Decipherment';
 import {Route, NavLink, HashRouter} from 'react-router-dom';
+import './style.css';
+import { Link } from 'react-router-dom';
 
 class Articles extends Component {
     render() {
@@ -11,11 +13,11 @@ class Articles extends Component {
             <div>
               <HashRouter>
                 <div>
-                  <div className="menu">
-                    <NavLink to="/Testpilot"><span>Test Pilot</span></NavLink>
-                    <NavLink to="/Vangelis"><span>Vangelis</span></NavLink>
-                    <NavLink to="/Decipherment"><span>Decipherment</span></NavLink>
-                  </div>
+                  <ul className="menu">
+                    <li class="one"><NavLink to="/Testpilot"><span>Test Pilot</span></NavLink></li>
+                    <li class="two"><NavLink to="/Vangelis"><span>Vangelis</span></NavLink></li>
+                    <li class="three"><NavLink to="/Decipherment"><span>Decipherment</span></NavLink></li>
+                  </ul>
                   <div className="content2">
                     <Route path="/Testpilot" component={Testpilot} />
                     <Route path="/Vangelis" component={Vangelis} />

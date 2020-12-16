@@ -14,7 +14,33 @@ body
 {
   display: flex;
   flex-direction: column;
-  width: 150px;
+  width: 100px;
+  user-select: none;
+  transition: 0.2s;
+  color: white;
+}
+
+.one
+{
+  display: block;
+  margin-top: 100px;
+}
+
+.two
+{
+  display: block;
+  margin-top: 100px;
+}
+
+.three
+{
+  display: block;
+  margin-top: 100px;
+}
+
+a:hover
+{
+  background: rgba(255,255,255,.2);
 }
 
 .all_link
