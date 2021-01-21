@@ -13,16 +13,16 @@ class Main extends Component {
               <div>
                   <h1>ReactJavaScript</h1>
                   <ul className="header">
-                      <li2><NavLink exact to="/"><span>Главная</span></NavLink></li2>
-                      <li2><NavLink to="/Articles"><span>Статьи</span></NavLink></li2>
-                      <li2><NavLink to="/Game"><span>Игра</span></NavLink></li2>
-                      <li2><NavLink to="/Tests"><span>Тесты</span></NavLink></li2>
+                      <li><NavLink exact to="/"><span>Главная</span></NavLink></li>
+                      <li><NavLink to="/Articles"><span>Статьи</span></NavLink></li>
+                      <li><NavLink to="/Game"><span>Игра</span></NavLink></li>
+                      <li><NavLink to="/Tests"><span>Тесты</span></NavLink></li>
                   </ul>
                   <div className="content">
                       <Route exact path="/" component={Home} />
                       <Route path="/Articles" component={Articles} />
                       <Route path="/Game" component={Game} />
-                      <Route path="/Tests" component={Tests} />
+                      <Route path="/Tests" component={Articles} />
                   </div>
               </div>
           </HashRouter>

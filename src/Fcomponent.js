@@ -6,7 +6,7 @@ export default function Fcomponent(props) {
   return (
     <span>
         <div>
-          <Link exact to="/Articles"><img src="https://raw.githubusercontent.com/orcuntuna/react-turkce-kaynak/master/images/giris.jpeg" height="40%" width="40%"/></Link>
+          <img src="https://raw.githubusercontent.com/orcuntuna/react-turkce-kaynak/master/images/giris.jpeg" height="40%" width="40%"/>
         </div>
           {props.name}
     </span>

@@ -8,7 +8,7 @@ class Testpilot extends Component {
               <h8>
                 TESTPILOT
               </h8>
-              </div>
+            </div>
         );
     }
 }

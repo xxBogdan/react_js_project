@@ -1,46 +1,14 @@
 body
 {
     background-color: white;
-    padding: 20px;
-}
-
-.text
-{
-  margin-left: 300px;
-  font-family: "Helvetica";
+    padding: 50px;
 }
 
 .menu
 {
   display: flex;
   flex-direction: column;
-  width: 100px;
-  user-select: none;
-  transition: 0.2s;
-  color: white;
-}
-
-.one
-{
-  display: block;
-  margin-top: 100px;
-}
-
-.two
-{
-  display: block;
-  margin-top: 100px;
-}
-
-.three
-{
-  display: block;
-  margin-top: 100px;
-}
-
-a:hover
-{
-  background: rgba(255,255,255,.2);
+  width: 120px;
 }
 
 .all_link
@@ -50,7 +18,15 @@ a:hover
   text-decoration: none;
 }
 
-h1, ul, h4, h2
+.content_block
+{
+  display: flex;
+  display: inline-block;
+  justify-content: center;
+  text-align: center;
+}
+
+h1, ul, h4, h2, p
 {
   font-family: "Helvetica";
 }
@@ -66,40 +42,17 @@ h4
   text-align: center;
 }
 
-h5
+.h8
 {
-  font-family: "Helvetica";
-  margin-left: 790px;
-}
-
-h6
-{
-  margin-left: 790px;
-}
-
-h7
-{
-  margin-left: 790px;
+  color: black;
+  font-size: 20pt;
 }
 
 p
 {
   text-align: center;
-  font-family: "Helvetica";
   font-weight: normal;
   font-size: 12pt;
-}
-
-.content_block
-{
-  display: flex;
-  display: inline-block;
-}
-
-.h8
-{
-  color: black;
-  font-size: 20pt;
 }
 
 p2
@@ -172,26 +125,20 @@ ul.header
     padding: 0px;
 }
 
-ul.header li2
+ul.header li
 {
   display: inline;
   list-style-type: none;
   margin: 0;
 }
 
-ul.header li2 a
+ul.header li a
 {
   color: white;
   font-weight: 700;
   text-decoration: none;
   padding: 20px;
   display: inline-block;
-}
-
-span:hover
-{
-  cursor: pointer;
-  color: red;
 }
 
 a
@@ -203,7 +150,13 @@ a
   color: black;
 }
 
-a:visited
+a:hover
 {
- color: black;
+  background: rgba(255,255,255,.2);
+}
+
+span:hover
+{
+  cursor: pointer;
+  color: red;
 }
