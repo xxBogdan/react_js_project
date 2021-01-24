@@ -6,6 +6,7 @@ import Decipherment from './Decipherment';
 import {Route, NavLink, HashRouter} from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import './style.css';
+const SHOW_MODIFIED = true;
 
 class Articles extends Component {
     render() {
