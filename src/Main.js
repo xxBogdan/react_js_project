@@ -1,5 +1,5 @@
-import React, {Component} from 'react';
 import {Route, NavLink, HashRouter} from 'react-router-dom';
+import React, {Component} from 'react';
 import Home from './Home';
 import Articles from './Articles';
 import Game from './Game';
@@ -23,6 +23,9 @@ class Main extends Component {
                       <Route path="/Articles" component={Articles} />
                       <Route path="/Game" component={Game} />
                       <Route path="/Tests" component={Articles} />
+                      <Route path="/Article/:postId" component={1} />
+                      <Route path="/Article/:postId" component={2} />
+                      <Route path="/Article/:postId" component={3} />
                   </div>
               </div>
           </HashRouter>

@@ -1,15 +1,15 @@
 import React, {Component} from 'react';
 import {Route, NavLink, HashRouter} from 'react-router-dom';
 
-class Testpilot extends Component {
+class Article3 extends Component {
     render() {
         return (
             <div>
               <h8>
-                TESTPILOT
+                DECIPHERMENT
               </h8>
             </div>
         );
     }
 }
-export default Testpilot;
+export default Article3;
