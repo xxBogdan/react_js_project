@@ -1,61 +1,16 @@
-import React, { Component } from "react";
-import './articlecomponent.css';
+import React, {Component} from 'react';
+import {Route, NavLink, HashRouter} from 'react-router-dom';
 
-class ArticleComponent extends Component {
-	
-	constructor(props) {
-		super(props);
-		this.state = {
-			title: "",
-			created: "",
-			content: "",
-			isJson: false
-		};
-	}
-	
-	postQuery(url){
-		return fetch(url, { method: "GET", headers: { 'Accept': 'application/json', 'Content-Type': 'application/json', }, }).then((response) => { 
-			const contentType = response.headers.get("content-type"); 
-				if (contentType && contentType.indexOf("application/json") !== -1) {
-					this.setState({ isJson: true });
-					return response.json() 
-				} else { 
-					return response.text() 
-				}
-			});
-	}
-	
-	componentDidMount() {
-		var id = this.props.match.params.id;
-		const fetchUrls = async () => {
-			await this.postQuery('http://wp.ru/wp-json/wp/v2/posts/'+id).then(response => {
-				if(this.state.isJson){
-					this.setState({ created: response.date });
-					this.setState({ content: response.content.rendered });
-					this.setState({ title: response.title.rendered });
-				}
-			})
-		};
-		fetchUrls();
-	}
-	render() {
-    return (
-        <div className="article_component">
-			<div className="article_header">
-				<div className="article_header_center">
-					{ this.state.title === "" ? <span>Загрузка названия статьи..</span> : <span>{ this.state.title }</span> }
-				</div>
-				<div className="article_header_right">
-				    { this.state.created === "" ? <span>Загрузка даты создания статьи..</span> : <span className="created">Создано {this.state.created}</span> }
-				</div>
-			</div>
-			{ this.state.content === "" ? <div className="article_content"><span>Загрузка контента..</span></div> : <div className="article_content" dangerouslySetInnerHTML={{__html: this.state.content}}></div> }
-			<div className="article_footer">
-				<button onClick={event =>  window.location.href='/#/articles'}>Назад</button>
-			</div>
-        </div>
-    );
-  }
+class Articlecomponent extends Component {
+    render() {
+        return (
+            <div>
+              <h8>
+                VANGELIS
+              </h8>
+            </div>
+        );
+    }
 }
 
-export default ArticleComponent;
+export default Articlecomponent;
