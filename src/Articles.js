@@ -2,8 +2,6 @@ import React, { Component } from "react";
 import './articlecomponent.css'
 
 class Articles extends Component {
-
-    
       
     constructor(props) {
       super(props);
