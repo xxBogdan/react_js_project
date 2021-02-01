@@ -4,6 +4,7 @@ import Home from './Home';
 import Articles from './Articles';
 import Game from './Game';
 import Tests from './Tests';
+import ArticleComponent from "./articlecomponent";
 import './style.css';
 
 class Main extends Component {
@@ -22,10 +23,8 @@ class Main extends Component {
                       <Route exact path="/" component={Home} />
                       <Route path="/Articles" component={Articles} />
                       <Route path="/Game" component={Game} />
-                      <Route path="/Tests" component={Articles} />
-                      <Route path="/Article/:postId" component={1} />
-                      <Route path="/Article/:postId" component={2} />
-                      <Route path="/Article/:postId" component={3} />
+                      <Route path="/Tests" component={Tests} />
+                      <Route path="/Articlecomponent/:id" component={ArticleComponent} />
                   </div>
               </div>
           </HashRouter>
