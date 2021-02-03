@@ -45,7 +45,7 @@ class Articles extends Component {
       return (
         <div className="articles">
           {
-            this.state.urls.length > 0 ? this.state.urls.map((result, i) => ( <a className="articles_style" key={i} href={result[1]}>{result[0]}</a> )) : this.state.isLoading ? <span>Загрузка статей...</span> : <span>Статей нет.</span>
+            this.state.urls.length > 0 ? this.state.urls.map((result, i) => ( <a className="articles_style" key={i} href={result[1]}>{result[0]}</a> )) : this.state.isLoading ? <span>Загрузка статей</span> : <span>Статей нет</span>
           }
         </div>
       );

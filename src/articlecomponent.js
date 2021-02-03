@@ -64,7 +64,7 @@ class ArticleComponent extends Component
 				</div>
 					{ this.state.content === "" ? <div className="article_content"><span>Загрузка контента</span></div> : <div className="article_content" dangerouslySetInnerHTML={{__html: this.state.content}}></div> }
 				<div className="article_footer">
-					<button onClick={event =>  window.location.href='/#/articles'}>Другие статьи</button>
+					<button class="button" onClick={event =>  window.location.href='/#/articles'}>Другие статьи</button>
 				</div>
       </div>
     );
