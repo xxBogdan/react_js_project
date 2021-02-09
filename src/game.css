@@ -97,65 +97,13 @@ button:focus
   height: 60px;
 }
 
-#one
+.cell
 {
   width: 60px;
   height: 60px;
   display: flex;
   background-color: #C4C4C4;
-	font-family: Helvetica;
-  color: black;
-  font-size: 12pt;
-  align-items: center;
-  font-weight: 600;
-}
-
-#two
-{
-  width: 60px;
-  height: 60px;
-  display: flex;
-  background-color: #C4C4C4;
-	font-family: Helvetica;
-  color: black;
-  font-size: 12pt;
-  align-items: center;
-  font-weight: 600;
-}
-
-#three
-{
-  width: 60px;
-  height: 60px;
-  display: flex;
-  background-color: #C4C4C4;
-	font-family: Helvetica;
-  color: black;
-  font-size: 12pt;
-  align-items: center;
-  font-weight: 600;
-}
-
-#four
-{
-  width: 60px;
-  height: 60px;
-  display: flex;
-  background-color: #C4C4C4;
-	font-family: Helvetica;
-  color: black;
-  font-size: 12pt;
-  align-items: center;
-  font-weight: 600;
-}
-
-#five
-{
-  width: 60px;
-  height: 60px;
-  display: flex;
-  background-color: #C4C4C4;
-	font-family: Helvetica;
+  font-family: Helvetica;
   color: black;
   font-size: 12pt;
   align-items: center;
