@@ -110,9 +110,29 @@ button:focus
   font-weight: 600;
 }
 
+.win
+{
+  background-image: url("images/game/win.png")!important;
+  background-size: contain!important;
+}
+
+.lose
+{
+  background-image: url("images/game/lose.png")!important;
+  background-size: contain!important;
+}
+
+.draw
+{
+  background-image: url("images/game/draw.png")!important;
+  background-size: contain!important;
+}
+
 #notification_text
 {
   color: yellow;
   font-size: 14pt;
   font-family: Helvetica;
+  position: relative;
+  left: 40px;
 }
