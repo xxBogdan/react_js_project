@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import './game.css';
+import queryString from 'query-string';
 
 class Game extends Component {
 
@@ -11,6 +12,7 @@ class Game extends Component {
             max: 10,
             number: 1
           }
+        this.urlClick ="http://wordpress/wp-json/myapi/game";
         this.timerActive="";
 		this.numberAttempts = 3;
         this.boxClass = [
@@ -50,6 +52,14 @@ class Game extends Component {
 
     handleClick = (e) => 
     {
+        fetch(this.urlClick, {
+            method: 'POST',
+            headers: {'Content-Type':'application/x-www-form-urlencoded'},
+            body: queryString.stringify({for:'bar', blah:1})
+        })
+        .then( (responseData) => { console.warn(responseData); return responseData; });
+
+
         const min = 1;
         const max = 10;
         const rand = Math.floor(Math.random() * (max - min + 1) + min);
