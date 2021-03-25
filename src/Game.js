@@ -7,11 +7,6 @@ class Game extends Component {
 	constructor(props) 
     {
 		super(props);
-        this.state = {
-            min: 1,
-            max: 10,
-            number: 1
-          }
         this.urlClick ="http://wordpress/wp-json/myapi/game";
         this.timerActive="";
 		this.numberAttempts = 3;
@@ -59,50 +54,10 @@ class Game extends Component {
         })
         .then( (responseData) => { console.warn(responseData); return responseData; });
 
-
-        const min = 1;
-        const max = 10;
-        const rand = Math.floor(Math.random() * (max - min + 1) + min);
-        let delayWait = 5000;
         let attempts = document.getElementById("attempts");
         let text = document.getElementById("notification_text");
         let keyId = e.currentTarget.dataset.id;
-        text.innerHTML = "Ячейка откроется через " + delayWait/1000 + " секунд";
         console.log(e.target.dataset.id);
-
-        if (this.numberAttempts === 0)
-        {
-            text.innerHTML = "Ваши попытки закончились!";
-            return false;
-        }
-
-        else 
-        {
-            setTimeout(() => 
-            {
-                if (rand >= 4 && rand < 8)
-                {
-                    text.innerHTML = "Вы выиграли!";
-                    this.boxClass[keyId]="win";
-                }
-
-                else if (rand >= 8 && rand < 10)
-                {
-                    text.innerHTML = "Вы получили дополнительную попытку!";
-                    this.boxClass[keyId]="draw"
-                }
-
-                else
-                {
-                    text.innerHTML = "Вы проиграли.";
-                    this.boxClass[keyId]="lose"
-                }
-            
-                attempts.innerHTML = "Попытки: " + this.numberAttempts;
-                this.setState({boxClass:this.boxClass})
-
-            }, delayWait);
-        }
     } 
 
     render() 
