@@ -39,6 +39,7 @@ button:focus
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
 }
 
 .wrapper_space
@@ -131,8 +132,7 @@ button:focus
 #notification_text
 {
   color: yellow;
-  font-size: 14pt;
+  font-size: 13pt;
   font-family: Helvetica;
   position: relative;
-  left: 40px;
 }

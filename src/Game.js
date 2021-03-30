@@ -1,72 +1,58 @@
 import React, { Component } from "react";
-import './game.css';
 import queryString from 'query-string';
+import './game.css';
 
 class Game extends Component {
-
-	constructor(props) 
-    {
+	constructor(props) {
 		super(props);
         this.urlClick ="http://wordpress/wp-json/myapi/game";
         this.timerActive="";
 		this.numberAttempts = 3;
-        this.boxClass = [
-          "",
-          "",
-          "",
-          "",
-          "",
-          "",
-          "",
-          "",
-          "",
-          "", 
-          "",
-          "",
-          "",
-          "",
-          "", 
-          "",
-          "",
-          "",
-          "",
-          "", 
-          "",
-          "",
-          "",
-          "",
-          "", 
+        this.boxClass = ["","","","","","","","","","","","","","","","","","","","","","","","","", 
         ];
-		
         this.state = {
             boxClass: this.boxClass
         }
-          
 		this.handleClick = this.handleClick.bind(this);
 	}
 
-    handleClick = (e) => 
-    {
+    static defaultProps = {
+        user_id:
+        number_cell: this.boxClass[data-id]
+    }
+
+    handleClick = (e) => {
         fetch(this.urlClick, {
             method: 'POST',
             headers: {'Content-Type':'application/x-www-form-urlencoded'},
             body: queryString.stringify({for:'bar', blah:1})
         })
-        .then( (responseData) => { console.warn(responseData); return responseData; });
+        .then((responseData) => { 
+            let text = document.getElementById("notification_text");
+            text.innerHTML = "Ячейка откроется через " + " секунд";
+            console.warn(responseData); return responseData;
+        });
 
         let attempts = document.getElementById("attempts");
-        let text = document.getElementById("notification_text");
         let keyId = e.currentTarget.dataset.id;
         console.log(e.target.dataset.id);
-    } 
-
-    render() 
-    {
+        
+        if (this.numberAttempts === 0) {
+            text.innerHTML = "Ваши попытки закончились!";
+            return false;
+        }
+        else {
+            text.innerHTML = "Ваши попытки: " + this.numberAttempts;
+            this.setState({boxClass:this.boxClass})
+            return false;
+        }
+    }
+    
+    render() {
         return (
             <div className="games">
                 <div className="notification">
                     <p id="notification_text">Выберите ячейку для запуска игры!</p>
-                    <p id="attempts">Попытки: {this.numberAttempts}</p>
                 </div>
                     <div className="wrapper_space">
                         <div className="line_one">
