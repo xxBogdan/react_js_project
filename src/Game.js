@@ -17,31 +17,51 @@ class Game extends Component {
 	}
 
     handleClick = (e) => {
-        fetch(this.urlClick, {
+
+        let text = document.getElementById("text");
+        text.innerHTML = "Открывается " + e.target.innerHTML;
+
+        let echo = fetch(this.urlClick, {
             method: 'POST',
             headers: {'Content-Type':'application/x-www-form-urlencoded'},
             body: queryString.stringify({user_id:user_id, cell_number:number_cell})
-        })
-        .then((responseData) => { 
+        }) .then((responseData) => {
+
             let text = document.getElementById("notification_text");
-            text.innerHTML = "Ячейка откроется через " + " секунд";
+            let keyId = e.currentTarget.dataset.id;
+            let text = document.getElementById("notification_text");
+
+            if () {
+                text.innerHTML = "Вы выиграли!";
+                this.boxClass[keyId]="win";
+            }
+            else if () {
+                text.innerHTML = "Вы получили дополнительную попытку!";
+                this.boxClass[keyId]="draw"
+                this.numberAttempts++;
+            }
+            else {
+                text.innerHTML = "Вы проиграли.";
+                this.boxClass[keyId]="lose"
+                this.numberAttempts--;
+            }
+            
+            if (this.numberAttempts === 0) {
+                text.innerHTML = "Ваши попытки закончились!";
+                return false;
+            }
+            else {
+                text.innerHTML = "Ваши попытки: " + this.numberAttempts;
+                this.setState({boxClass:this.boxClass})
+            }
+
+            text.innerHTML = "Ваши попытки: " + this.numberAttempts;
+            this.setState({boxClass:this.boxClass});
+
             console.warn(responseData); return responseData;
         });
-        
-        let text = document.getElementById("notification_text");
-        let attempts = document.getElementById("attempts");
-        let keyId = e.currentTarget.dataset.id;
-        console.log(e.target.dataset.id);
-        
-        if (this.numberAttempts === 0) {
-            text.innerHTML = "Ваши попытки закончились!";
-            return false;
-        }
-        else {
-            text.innerHTML = "Ваши попытки: " + this.numberAttempts;
-            this.setState({boxClass:this.boxClass})
-            return false;
-        }
+
+        console.log(echo);
     }
     
     render() {
