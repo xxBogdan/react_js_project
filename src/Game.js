@@ -20,7 +20,7 @@ class Game extends Component {
         fetch(this.urlClick, {
             method: 'POST',
             headers: {'Content-Type':'application/x-www-form-urlencoded'},
-            body: queryString.stringify({for:'bar', blah:1})
+            body: queryString.stringify({user_id:user_id, cell_number:number_cell})
         })
         .then((responseData) => { 
             let text = document.getElementById("notification_text");
