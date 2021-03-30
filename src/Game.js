@@ -16,11 +16,6 @@ class Game extends Component {
 		this.handleClick = this.handleClick.bind(this);
 	}
 
-    static defaultProps = {
-        user_id:
-        number_cell: this.boxClass[data-id]
-    }
-
     handleClick = (e) => {
         fetch(this.urlClick, {
             method: 'POST',
@@ -32,7 +27,8 @@ class Game extends Component {
             text.innerHTML = "Ячейка откроется через " + " секунд";
             console.warn(responseData); return responseData;
         });
-
+        
+        let text = document.getElementById("notification_text");
         let attempts = document.getElementById("attempts");
         let keyId = e.currentTarget.dataset.id;
         console.log(e.target.dataset.id);
