@@ -20,6 +20,8 @@ class Game extends Component {
 
         let text = document.getElementById("text");
         text.innerHTML = "Открывается " + e.target.innerHTML;
+        let user_id = document.getElementById("user_id");
+        let user_id = document.getElementById("number_cell");
 
         let echo = fetch(this.urlClick, {
             method: 'POST',
@@ -31,19 +33,17 @@ class Game extends Component {
             let keyId = e.currentTarget.dataset.id;
             let text = document.getElementById("notification_text");
 
-            if () {
-                text.innerHTML = "Вы выиграли!";
-                this.boxClass[keyId]="win";
+            if (data.type_prize == 3) {
+                text.innerHTML = data.message;
+                this.boxClass[e.target.dataset.id]="lose";
             }
-            else if () {
-                text.innerHTML = "Вы получили дополнительную попытку!";
+            else if (data.type_prize == 2) {
+                text.innerHTML = data.message;
                 this.boxClass[keyId]="draw"
-                this.numberAttempts++;
             }
             else {
-                text.innerHTML = "Вы проиграли.";
-                this.boxClass[keyId]="lose"
-                this.numberAttempts--;
+                text.innerHTML = data.message;
+                this.boxClass[e.target.dataset.id]="win";
             }
             
             if (this.numberAttempts === 0) {
