@@ -21,7 +21,7 @@ class Game extends Component {
         let text = document.getElementById("text");
         text.innerHTML = "Открывается " + e.target.innerHTML;
         let user_id = document.getElementById("user_id");
-        let user_id = document.getElementById("number_cell");
+        let number_cell = document.getElementById("number_cell");
 
         let echo = fetch(this.urlClick, {
             method: 'POST',
