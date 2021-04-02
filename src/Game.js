@@ -20,19 +20,20 @@ class Game extends Component {
 
         let text = document.getElementById("text");
         text.innerHTML = "Открывается " + e.target.innerHTML;
-        let user_id = document.getElementById("user_id");
-        let number_cell = document.getElementById("number_cell");
+        let user_id = 1;
+        let number_cell = e.target.dataset.id;
 
         let echo = fetch(this.urlClick, {
             method: 'POST',
             headers: {'Content-Type':'application/x-www-form-urlencoded'},
             body: queryString.stringify({user_id:user_id, cell_number:number_cell})
-        }) .then((responseData) => {
-
-            let text = document.getElementById("notification_text");
+        }) .then(function(response) {
+            return response.json()
+          })
+          .then(function (data) {
             let keyId = e.currentTarget.dataset.id;
             let text = document.getElementById("notification_text");
-
+        
             if (data.type_prize == 3) {
                 text.innerHTML = data.message;
                 this.boxClass[e.target.dataset.id]="lose";
@@ -54,14 +55,12 @@ class Game extends Component {
                 text.innerHTML = "Ваши попытки: " + this.numberAttempts;
                 this.setState({boxClass:this.boxClass})
             }
-
+        
             text.innerHTML = "Ваши попытки: " + this.numberAttempts;
             this.setState({boxClass:this.boxClass});
+            console.log('data', data)
+          })
 
-            console.warn(responseData); return responseData;
-        });
-
-        console.log(echo);
     }
     
     render() {
