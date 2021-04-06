@@ -18,10 +18,10 @@ class Game extends Component {
 
     handleClick = (e) => {
 
-        let text = document.getElementById("text");
-        text.innerHTML = "Открывается " + e.target.innerHTML;
         let user_id = 1;
         let number_cell = e.target.dataset.id;
+
+        e.currentTarget.setAttribute("disabled", "disabled");
 
         let echo = fetch(this.urlClick, {
             method: 'POST',
@@ -30,37 +30,39 @@ class Game extends Component {
         }) .then(function(response) {
             return response.json()
           })
-          .then(function (data) {
-            let keyId = e.currentTarget.dataset.id;
-            let text = document.getElementById("notification_text");
+          .then((data) => {
         
-            if (data.type_prize == 3) {
-                text.innerHTML = data.message;
-                this.boxClass[e.target.dataset.id]="lose";
+            if (data.type_prize === 1) {
+                text.innerHTML = data.MESSAGE;
+                this.boxClass[number_cell]="win";
+                this.numberAttempts--;
             }
-            else if (data.type_prize == 2) {
-                text.innerHTML = data.message;
-                this.boxClass[keyId]="draw"
+            else if (data.type_prize === 2) {
+                text.innerHTML = data.MESSAGE;
+                this.boxClass[number_cell]="draw";
             }
             else {
-                text.innerHTML = data.message;
-                this.boxClass[e.target.dataset.id]="win";
+                text.innerHTML = data.MESSAGE;
+                this.boxClass[number_cell]="lose";
+                this.numberAttempts--;
+                text.innerHTML = "Вы проиграли";
             }
             
             if (this.numberAttempts === 0) {
                 text.innerHTML = "Ваши попытки закончились!";
                 return false;
-            }
+            } 
             else {
                 text.innerHTML = "Ваши попытки: " + this.numberAttempts;
                 this.setState({boxClass:this.boxClass})
             }
-        
-            text.innerHTML = "Ваши попытки: " + this.numberAttempts;
-            this.setState({boxClass:this.boxClass});
-            console.log('data', data)
           })
 
+          let attempts = document.getElementById("attempts");
+          let text = document.getElementById("notification_text");
+          text.innerHTML = "Открывается ячейка подождите несколько секунд ";
+
+          console.log(number_cell);
     }
     
     render() {
@@ -68,6 +70,7 @@ class Game extends Component {
             <div className="games">
                 <div className="notification">
                     <p id="notification_text">Выберите ячейку для запуска игры!</p>
+                    <p id="attempts">Ваши попытки: {this.numberAttempts}</p>
                 </div>
                     <div className="wrapper_space">
                         <div className="line_one">

@@ -135,4 +135,13 @@ button:focus
   font-size: 13pt;
   font-family: Helvetica;
   position: relative;
+  top: 15px;
+}
+
+#attempts {
+  color: yellow;
+  font-size: 13pt;
+  font-family: Helvetica;
+  position: relative;
+  bottom: 15px;
 }
