@@ -6,8 +6,16 @@ import Game from './Game';
 import Tests from './Tests';
 import ArticleComponent from "./articlecomponent";
 import './style.css';
+import qs from 'querystring';
 
 class Main extends Component {
+    componentDidMount() {
+        const params = window.location.hash.slice(3);
+        const paramsAsObject = qs.parse(params);
+        
+        console.log(paramsAsObject)
+    }
+
     render() {
         return (
           <HashRouter>

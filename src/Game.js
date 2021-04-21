@@ -18,16 +18,16 @@ class Game extends Component {
 
     handleClick = (e) => {
 
-        let user_id = 1;
+        let user_id = localStorage.getItem();
         let number_cell = e.target.dataset.id;
 
         e.currentTarget.setAttribute("disabled", "disabled");
 
-        let echo = fetch(this.urlClick, {
+        fetch(this.urlClick,{
             method: 'POST',
             headers: {'Content-Type':'application/x-www-form-urlencoded'},
             body: queryString.stringify({user_id:user_id, cell_number:number_cell})
-        }) .then(function(response) {
+        }).then(function(response) {
             return response.json()
           })
           .then((data) => {
@@ -58,7 +58,6 @@ class Game extends Component {
             }
           })
 
-          let attempts = document.getElementById("attempts");
           let text = document.getElementById("notification_text");
           text.innerHTML = "Открывается ячейка подождите несколько секунд ";
 
