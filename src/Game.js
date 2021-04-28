@@ -18,7 +18,7 @@ class Game extends Component {
 
     handleClick = (e) => {
 
-        let user_id = localStorage.getItem();
+        let user_id = localStorage.setItem('user', 1);
         let number_cell = e.target.dataset.id;
 
         e.currentTarget.setAttribute("disabled", "disabled");
@@ -69,7 +69,7 @@ class Game extends Component {
             <div className="games">
                 <div className="notification">
                     <p id="notification_text">Выберите ячейку для запуска игры!</p>
-                    <p id="attempts">Ваши попытки: {this.numberAttempts}</p>
+                    <p id="attempts"></p>
                 </div>
                     <div className="wrapper_space">
                         <div className="line_one">

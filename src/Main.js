@@ -13,6 +13,7 @@ class Main extends Component {
         const params = window.location.hash.slice(3);
         const paramsAsObject = qs.parse(params);
         
+        
         console.log(paramsAsObject)
     }
 
