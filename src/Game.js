@@ -18,8 +18,8 @@ class Game extends Component {
 
     handleClick = (e) => {
 
-        let user_id = localStorage.setItem('user', 1);
-        let number_cell = e.target.dataset.id;
+        let user_id = localStorage.getItem('user');
+        let number_cell = e.currentTarget.dataset.id;
 
         e.currentTarget.setAttribute("disabled", "disabled");
 
@@ -41,11 +41,14 @@ class Game extends Component {
                 text.innerHTML = data.MESSAGE;
                 this.boxClass[number_cell]="draw";
             }
-            else {
+            else if (data.type_prize === 3) {
                 text.innerHTML = data.MESSAGE;
                 this.boxClass[number_cell]="lose";
                 this.numberAttempts--;
                 text.innerHTML = "Вы проиграли";
+            }
+            else {
+                window.location.href = 'http://localhost:3000/#/articles';
             }
             
             if (this.numberAttempts === 0) {

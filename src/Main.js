@@ -12,8 +12,9 @@ class Main extends Component {
     componentDidMount() {
         const params = window.location.hash.slice(3);
         const paramsAsObject = qs.parse(params);
-        
-        
+        let user = paramsAsObject.vk_user_id;
+        localStorage.setItem('user', user);
+
         console.log(paramsAsObject)
     }
 
