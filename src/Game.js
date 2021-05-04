@@ -5,7 +5,7 @@ import './game.css';
 class Game extends Component {
 	constructor(props) {
 		super(props);
-        this.urlClick ="http://wordpress/wp-json/myapi/game";
+        this.urlClick = templateUrl + "/wp-json/myapi/game";
         this.timerActive="";
 		this.numberAttempts = 3;
         this.boxClass = ["","","","","","","","","","","","","","","","","","","","","","","","","", 
@@ -48,7 +48,7 @@ class Game extends Component {
                 text.innerHTML = "Вы проиграли";
             }
             else {
-                window.location.href = 'http://localhost:3000/#/articles';
+                window.location.href = '#/articles';
             }
             
             if (this.numberAttempts === 0) {

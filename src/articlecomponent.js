@@ -37,7 +37,7 @@ class ArticleComponent extends Component
 	{
 		var id = this.props.match.params.id;
 		const fetchUrls = async () => {
-			await this.postQuery('http://wordpress/wp-json/wp/v2/posts/'+id).then(response => 
+			await this.postQuery(templateUrl + '/wp-json/wp/v2/posts' + id).then(response => 
 			{
 				if(this.state.isJson)
 				{

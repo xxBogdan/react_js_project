@@ -26,7 +26,7 @@ class Articles extends Component {
     
     componentDidMount() {
       const fetchUrls = async () => {
-        await this.postQuery('http://wordpress/wp-json/wp/v2/posts').then(response => {
+        await this.postQuery(templateUrl + '/wp-json/wp/v2/posts' + id).then(response => {
           let array = [];
           if(this.state.isJson && response instanceof Array && response.length > 0){
             for(var i = 0; i < response.length; i++){
