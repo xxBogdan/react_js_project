@@ -5,7 +5,7 @@ import './game.css';
 class Game extends Component {
 	constructor(props) {
 		super(props);
-        this.urlClick = templateUrl + "/wp-json/myapi/game";
+        this.urlClick = window.location.origin + "/wp-json/myapi/game";
         this.timerActive="";
 		this.numberAttempts = 3;
         this.boxClass = ["","","","","","","","","","","","","","","","","","","","","","","","","", 
