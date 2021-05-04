@@ -30,7 +30,7 @@ class Articles extends Component {
           let array = [];
           if(this.state.isJson && response instanceof Array && response.length > 0){
             for(var i = 0; i < response.length; i++){
-              var url = [response[i].title.rendered, "/#/articlecomponent/"+response[i].id]
+              var url = [response[i].title.rendered, "#/articlecomponent/"+response[i].id]
               array.push(url);
             }
           }
